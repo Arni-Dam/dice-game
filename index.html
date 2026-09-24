@@ -1,13 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <script src="./assets/js/main.js" defer></script>
+  <meta charset="UTF-8">
+  <title>Terningespil</title>
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <script src="./assets/js/main.js" defer></script>
 </head>
 <body>
-    
+  <h1>Terningespil</h1>
+
+  <div class="scoreboard">
+    <div>
+      <h2>Spiller</h2>
+      <p id="player-dice">-</p>
+      <p>Sum: <span id="player-sum">0</span></p>
+      <p>Point: <span id="player-score">0</span></p>
+    </div>
+    <div>
+      <h2>Computer</h2>
+      <p id="computer-dice">-</p>
+      <p>Sum: <span id="computer-sum">0</span></p>
+      <p>Point: <span id="computer-score">0</span></p>
+    </div>
+  </div>
+
+  <p id="round-result"></p>
+  <p id="game-message"></p>
+
+  <button id="roll-btn">Slå terninger</button>
+
 </body>
 </html>

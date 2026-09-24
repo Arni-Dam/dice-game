@@ -1,0 +1,35 @@
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 500px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin: 1.5rem 0;
+}
+
+.scoreboard div {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 45%;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+#game-message {
+  font-weight: bold;
+  color: #2a7a2a;
+}
