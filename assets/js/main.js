@@ -12,9 +12,7 @@ let playerScore = 0;
 let computerScore = 0;
 const WINNING_SCORE = 5;
 
-// Simulerer et kast med 5 sekssidede terninger og returnerer både de
-// enkelte kast og deres samlede sum. Bruges til både spilleren og
-// computeren, så al tilfældighed i spillet går igennem denne ene funktion.
+// Slår 5 terninger og returnerer kastene samt deres sum.
 function rollFiveDice() {
   const rolls = [];
   for (let i = 0; i < 5; i++) {
@@ -24,10 +22,7 @@ function rollFiveDice() {
   return { rolls, sum };
 }
 
-// Afvikler én runde: slår terninger for spiller og computer, opdaterer
-// visningen af terninger/summer, sammenligner de to summer for at afgøre
-// rundens udfald (sejr, tab eller uafgjort) og opdaterer scoren derefter.
-// Dette er spillets hovedfunktion, den kaldes hver gang der klikkes på knappen.
+// Afvikler én runde og opdaterer score baseret på resultatet.
 function playRound() {
   const player = rollFiveDice();
   const computer = rollFiveDice();
@@ -55,9 +50,7 @@ function playRound() {
   checkGameOver();
 }
 
-// Tjekker om en af siderne har nået vinderscoren (5 point).
-// Hvis det er tilfældet, annonceres den samlede vinder, og
-// knappen deaktiveres, så der ikke kan spilles flere runder.
+// Tjekker om spillet er vundet, og deaktiverer knappen hvis ja.
 function checkGameOver() {
   if (playerScore >= WINNING_SCORE || computerScore >= WINNING_SCORE) {
     const winner = playerScore > computerScore ? 'Spilleren' : 'Computeren';
@@ -66,5 +59,5 @@ function checkGameOver() {
   }
 }
 
-// Starter en ny runde, hver gang spilleren klikker på knappen.
+// Starter en ny runde ved klik på knappen.
 rollBtn.addEventListener('click', playRound);
